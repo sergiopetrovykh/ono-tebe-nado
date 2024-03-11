@@ -26,7 +26,8 @@ blockquote {
 }
 
 a {
-  color: inherit;
+  color: inherit; /* убираем синий цвет у ссылки */
+  text-decoration: none;
 }
 
 img {
