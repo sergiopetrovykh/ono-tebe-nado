@@ -6,9 +6,8 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   grid-template-rows: repeat(1, 1fr);
-  min-height: 293px;
   align-items: center;
-  padding: 20px 50px;
+  padding: 92px 50px 96px 50px;
 }
 
 /* контейнер навигации */
@@ -176,6 +175,7 @@
 
 /* кнопка «Сделать ставку» */
 .bet-button {
+  font-family: inherit;
   font-weight: 100;
   font-size: 22px;
   cursor: pointer;
@@ -184,7 +184,7 @@
   text-transform: uppercase;
   text-align: center;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 12px 32px;
 }
 
@@ -252,28 +252,26 @@
   padding: 51px 40px 48px 40px;
 }
 
-/*  классы, чтобы задать определённый фон каждой из карточек */
-.card_type_film {
-  background-image: url(../images/card-lot-01.jpg);
+/*  классs, чтобы задать поведения фона всем карточкам одновременно*/
+.card_type_film .card_type_book .card_type_picture {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+/*  классы, чтобы задать определённый фон каждой из карточек */
+.card_type_film {
+  background-image: url(../images/card-lot-01.jpg);
 }
 
 /*  классы, чтобы задать определённый фон каждой из карточек */
 .card_type_book {
   background-image: url(../images/card-lot-02.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 /*  классы, чтобы задать определённый фон каждой из карточек */
 .card_type_picture {
   background-image: url(../images/card-lot-03.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 /* заголовок карточки */
@@ -304,7 +302,10 @@
   padding: 0px 27px 90px 71px;
 }
 
-/* класс для колонок .about__column не понадобился */
+/*.about__column {
+  display: grid;
+   gap: 20px;
+}*/
 
 /* контейнер с логотипом */
 .about__logo {
@@ -339,11 +340,15 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-
+  letter-spacing: normal;
   color: #000000;
 }
-
-.about__text-one {
+/*псевдоэлемент для выбора первого абзаца в списке*/
+.about__text:not(:last-of-type) {
+  margin-bottom: 25px;
+}
+/*удаляю строки ниже по замечанию ревьюера. Он попросил использовать гибкий подход, например воспользуйтесь гибким gap для создания разрыва. Или используйте псевдоэлемент для обращения к элементу*/
+/*.about__text-one {
   margin-bottom: 24px;
   letter-spacing: normal;
 }
@@ -351,7 +356,7 @@
 .about__text-two {
   margin-bottom: 24px;
   letter-spacing: normal;
-}
+}*/
 
 /* вся секция FOOTER */
 .footer {
@@ -359,7 +364,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(1, 1fr);
   align-items: start;
-  padding: 66px 50px;
+  padding: 88px 50px;
 }
 
 .footer__address {
