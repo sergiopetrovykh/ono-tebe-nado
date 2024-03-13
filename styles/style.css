@@ -175,7 +175,7 @@
 
 /* кнопка «Сделать ставку» */
 .bet-button {
-  font-family: "Raleway";
+  font-family: "Raleway" Arial, sans-serif;
   font-weight: 100;
   font-size: 22px;
   cursor: pointer;
